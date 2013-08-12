@@ -8,9 +8,24 @@ describe GeoRef do
 
   context "validation" do
     context "requires" do
+
+      geo_ref = GeoRef.new
+
+      m_factory = ::RGeo::Geographic.simple_mercator_factory(
+        :has_z_coordinate => true,
+        :has_m_coordinate => true
+      )
+
+      geo_ref.a_point = m_factory.point(40.091565, -88.241421, 757, 2020)
+      geo_ref.a_polygon = geo_ref.a_point.buffer(100)
+
+      geo_ref.save
+
+      geo_ref.id
+
       before do
         # this code does *not* execute.  Why not?
-        geo_ref.a_point
+        geo_ref.a_point = m_factory.point(40.091565, -88.241421, 757, 2020)
         geo_ref.save
       end
     end
