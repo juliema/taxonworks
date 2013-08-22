@@ -19,6 +19,7 @@ gem 'rails', '4.0.0'
 #gem 'mysql2', '0.3.11'
 gem 'pg'
 gem 'activerecord-postgis-adapter'
+gem 'ffi-geos'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

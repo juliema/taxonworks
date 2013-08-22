@@ -50,6 +50,9 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    ffi (1.9.0)
+    ffi-geos (0.2.1)
+      ffi (>= 1.0.0)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.0.2)
@@ -64,8 +67,8 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
-    pg (0.15.1-x64-mingw32)
     pg (0.15.1-x86-mingw32)
+    pg (0.16.0-x64-mingw32)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -146,6 +149,7 @@ DEPENDENCIES
   awesome_nested_set!
   awesome_print
   coffee-rails (~> 4.0.0)
+  ffi-geos
   jbuilder (~> 1.0.1)
   jquery-rails
   pg
