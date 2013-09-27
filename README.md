@@ -7,16 +7,29 @@ TaxonWorks
 [![Dependency Status][7]][8]
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version
+------------
+2.0.0 -- also see .ruby-version file
 
-Things you may want to cover:
+System dependencies
+------------------- 
 
-* Ruby version
+PostgreSQL, postgis, GEOS
+  
+    # Ubuntu: 
+    sudo apt-get install libgeos-dev postgresql postgis
 
-* System dependencies
+    # Mac OS X:
+    brew install postgresql 
+    #(follow after install instructions)
+
+    brew install geos
+    brew install postgis
+    
+###postgis 
 
 * Configuration
+use config/database.yml.example for create and customize config/database.yml
 
 * Database creation
 
