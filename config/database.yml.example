@@ -1,0 +1,20 @@
+development:
+  adapter: postgis
+  database: taxonworks_development
+  username: postgres
+  password: 
+
+test: 
+  adapter: postgis
+  database: taxonworks_test
+  username: postgres
+  password:   
+
+production:
+  adapter: postgis
+  database: taxonworks_production
+  username: postgres
+  password:    
+
+
+
