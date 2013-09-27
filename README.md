@@ -19,23 +19,28 @@ PostgreSQL, postgis, GEOS
     # Ubuntu: 
     sudo apt-get install libgeos-dev postgresql postgis
 
-    # Mac OS X:
+    # Mac OS X assuming [brew][9] is installed:
     brew install postgresql 
     #(follow after install instructions)
 
     brew install geos
     brew install postgis
     
-###postgis 
+Configuration
+-------------
 
-* Configuration
 use config/database.yml.example for create and customize config/database.yml
 
 * Database creation
 
 * Database initialization
 
-* How to run the test suite
+How to run the test suite
+-------------------------
+    
+    rake
+
+    spec spec/app
 
 * Services (job queues, cache servers, search engines, etc.)
 
@@ -52,3 +57,4 @@ use config/database.yml.example for create and customize config/database.yml
 [6]: https://codeclimate.com/github/mbl-cli/taxonworks
 [7]: https://gemnasium.com/mbl-cli/taxonworks.png
 [8]: https://gemnasium.com/mbl-cli/taxonworks
+[9]: http://brew.sh/
