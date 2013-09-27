@@ -2,10 +2,17 @@ source 'https://rubygems.org'
 
 mac_os = win_os = false
 
-
+# THIS construct DO NOT always work for Windows, because some of our processes will
+# use and accept either delimiter
+# Most notably, RubyMine, the IDE which most of us use, is ambidextrous in this way.
 if File::SEPARATOR == '/'
   mac_os = true
   os = 'Mac'
+  if $LOAD_PATH[0] =~ /[A-Za-z]:[\/\\]/
+    win_os = true
+    mac_os = false
+    os = 'Windows'
+  end
 else
   win_os = true
   os = 'Windows'
