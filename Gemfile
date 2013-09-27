@@ -8,6 +8,11 @@ mac_os = win_os = false
 if File::SEPARATOR == '/'
   mac_os = true
   os = 'Mac'
+  if $LOAD_PATH[0] =~ /[A-Za-z]:[\/\\]/
+    win_os = true
+    mac_os = false
+    os = 'Windows'
+  end
 else
   win_os = true
   os = 'Windows'
