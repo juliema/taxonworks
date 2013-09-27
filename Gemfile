@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 mac_os = win_os = false
 
-# THIS construct DO NOT alway work for Windows, becaue some of our processes will use and accept either delimiter
+# THIS construct DO NOT always work for Windows, because some of our processes will
+# use and accept either delimiter
 # Most notably, RubyMine, the IDE which most of us use, is ambidextrous in this way.
 if File::SEPARATOR == '/'
   mac_os = true
