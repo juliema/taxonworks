@@ -11,6 +11,7 @@ before_install:
   - sudo apt-get install postgis
 before_script:
   - cp config/database.yml.example config/database.yml
+  - rake db:drop:all
   - rake db:create:all
   - rake db:migrate
   - rake db:migrate HPS_ENV=test
