@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/collectiveidea/awesome_nested_set.git
+  remote: https://github.com/collectiveidea/awesome_nested_set.git
   revision: 9177a78d115071626ba0b5e11c55e1482892d566
   tag: 3.0.0.rc.2
   specs:
