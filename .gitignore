@@ -22,7 +22,6 @@ Gemfile.lock
 # Ignore bundler config.
 /.bundle
 /bin
-/bundle_bin
 
 # Ignore all logfiles and tempfiles.
 /log/*.log

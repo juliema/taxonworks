@@ -1,33 +1,27 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
-mac_os = win_os = false
+# This is interesting.
+# gem 'rack-webconsole', git: 'https://github.com/grappendorf/rack-webconsole.git'
 
-# THIS construct DO NOT always work for Windows, because some of our processes will
-# use and accept either delimiter
-# Most notably, RubyMine, the IDE which most of us use, is ambidextrous in this way.
-if File::SEPARATOR == '/'
-  mac_os = true
-  os = 'Mac'
-  if $LOAD_PATH[0] =~ /[A-Za-z]:[\/\\]/
-    win_os = true
-    mac_os = false
-    os = 'Windows'
-  end
-else
+win_os = false
+
+if $LOAD_PATH[0] =~ /[A-Za-z]:[\/\\]/
   win_os = true
-  os = 'Windows'
 end
 
-puts "\nBundling on #{os}(#{$LOAD_PATH[0]})."
+puts "\nBundling on #{win_os ? 'Windows' : '*nix'}(#{$LOAD_PATH[0]})."
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.0'
 
 # Database
-gem 'ffi-geos'
 gem 'pg', '~> 0.17.0'
 gem 'activerecord-postgis-adapter'
+gem 'ffi-geos'
 
+# Testing
+# gem "factory_girl_rails", "~> 4.0"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0'
@@ -57,19 +51,20 @@ group :doc do
 end
 
 group :test do
-  gem 'rspec'
+  gem "rspec"
+  gem 'coveralls', '~> 0.7', require: false
 end
 
-gem 'debugger', '~> 1.6', group: [:development, :test] if not win_os
+gem 'debugger', group: [:development, :test] if not win_os
 
-group :development do
+group :development do 
   gem 'awesome_print'
 end
 
 gem 'rspec-rails', group: [:development, :test]
 
-gem 'awesome_nested_set',
-  tag: '3.0.0.rc.2',
+gem 'awesome_nested_set',  
+  tag: '3.0.0.rc.2', 
   git: 'https://github.com/collectiveidea/awesome_nested_set.git'
 
 
